@@ -1,0 +1,14 @@
+<div>
+  <form (ngSubmit)="onSubmit()"  #fibForm="ngForm">
+    <label>Enter your index:</label>
+    <input type="text" id="index" required [(ngModel)]="state.index" name="index" #name="ngModel">
+    <button type="submit">Submit</button>
+  </form>
+  <h3>Indexes I have seen: {{ state.seenIndexes | async }}</h3>
+
+  <h3>Calculated Values: {{ state.values | async }} </h3>
+
+  <div *ngFor="let item of state.values | async | keyvalue">
+    For index {{ item.key }} I calculated {{ item.value }}
+  </div>
+</div>
