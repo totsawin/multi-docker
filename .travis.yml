@@ -15,9 +15,9 @@ before_install:
   - gcloud config set compute/zone australia-southeast1-a
   - gcloud container clusters get-credentials multi-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker build -t totsawin/client-test -f ./client/Dockerfile.dev ./client
-script:
-  - docker run totsawin/client-test npm run test
+#  - docker build -t totsawin/client-test -f ./client/Dockerfile.dev ./client
+#script:
+#  - docker run totsawin/client-test npm run test
 
 deploy:
   provider: script
